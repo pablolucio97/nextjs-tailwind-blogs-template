@@ -102,3 +102,10 @@ export function capitalizeFirst(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+export function formatDateLong(date: string): string {
+  const inputDate = moment(date);
+
+  if (!inputDate.isValid()) return "";
+  return inputDate.locale("pt-br").format("DD [de] MMM [de] YYYY");
+}
+
