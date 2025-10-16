@@ -1,6 +1,7 @@
 import { formatDateLong } from "@/utils/format";
 import { CalendarIcon, ClockIcon } from "@phosphor-icons/react";
 import clsx from "clsx";
+import Image from "next/image";
 import React from "react";
 
 export interface ArticleImageProps {
@@ -66,9 +67,11 @@ export default function ArticleImage({
       )}
       aria-label={title}
     >
-      <img
+      <Image
         src={imgUrl}
         alt={title}
+        width={800}
+        height={800}
         loading="lazy"
         className={clsx(
           "absolute inset-0 h-full w-full object-cover",
